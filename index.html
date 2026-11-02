@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C.O.S.M.O | C.O.S.M.O Bot does the work. You approve it.</title>
+<meta name="description" content="C.O.S.M.O decides which security alerts are real, shows the evidence for every score, and hands each team its work. A person approves. It runs on your own server, online or offline. Built by Cypher, LLC.">
+<meta property="og:title" content="C.O.S.M.O | Threat intelligence and security operations on your own server">
+<meta property="og:description" content="C.O.S.M.O decides which security alerts are real, shows the evidence for every score, and hands each team its work. A person approves. It runs on your own server, online or offline. Built by Cypher, LLC.">
+<meta property="og:image" content="https://cosmoplatform.ai/assets/img/hero-overview.jpg">
+<meta name="theme-color" content="#04071a">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 19.5H3z"/><path d="M12 10v4"/><path d="M12 16.8v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol><symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M12 12 20 7.5M12 12v9M12 12 4 7.5"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/></symbol><symbol id="i-shieldok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="16.5" rx="2"/><path d="M9 4.5h6V7H9z"/><path d="m9 13.5 2 2 4-4"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></symbol><symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><path d="M12 14.5v2.5"/></symbol><symbol id="i-unplug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 18"/><path d="M8.5 16.4a5 5 0 0 1 6-.8"/><path d="M5 12.6a10 10 0 0 1 3.8-2.4M15.5 10.3A10 10 0 0 1 19 12.6"/><path d="M12 20h.01"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol><symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol><symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol><symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"/></symbol><symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6 6 0 0 1 3.5 5.8"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="m18.5 15.5.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol><symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol><symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol><symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h5l2 3h4l2-3h5"/><path d="M5.5 5h13L21 13v6H3v-6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol><symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M3 4h2.5l2.2 11h11l2-8H6.5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol><symbol id="i-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c2.5-1.5 5.2-2 8-2s5.5.5 8 2c0 7-3.5 12-8 12S4 14 4 7z"/><path d="M8.5 11h2M13.5 11h2"/></symbol><symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="C.O.S.M.O home"><img src="assets/img/cosmo-logo.png" width="360" height="123" alt="C.O.S.M.O, Bringing Order to Cyber Operations"></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links"><li><a href="#chatbot">Bot</a></li><li><a href="#ingest">Ingest</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#views">Screens</a></li><li><a href="#government">Government</a></li><li><a href="#contact">Contact</a></li></ul>
+      <a class="btn btn-primary btn-sm" href="#contact">Request a demo</a>
+      <details class="menu">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>Menu</summary>
+        <ul><li><a href="#chatbot">Bot</a></li><li><a href="#ingest">Ingest</a></li><li><a href="#workflow">Workflow</a></li><li><a href="#views">Screens</a></li><li><a href="#government">Government</a></li><li><a href="#security">Security</a></li><li><a href="#contact">Contact</a></li><li><a class="btn btn-primary" href="#contact">Request a demo</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M7 7l10 10M17 7 7 17"/></symbol><symbol id="i-replay" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/></symbol><symbol id="i-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6.5" y="5" width="3.6" height="14" rx="1"/><rect x="13.9" y="5" width="3.6" height="14" rx="1"/></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></symbol></defs></svg>
+
+<section class="hero" data-tab="home" aria-labelledby="hero-h">
+  <canvas class="stars" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-copy" data-reveal>
+      <img class="hero-logo" src="assets/img/cosmo-logo.png" width="360" height="123" alt="C.O.S.M.O, Bringing order to cyber operations">
+      <span class="eyebrow">AI Cyber Threat Intelligence Platform</span>
+      <h1 id="hero-h">AI that triages, investigates and responds to threats. <span class="accent">On your own hardware.</span></h1>
+      <p class="lead">C.O.S.M.O triages, investigates, hunts, responds and predicts. One platform, with AI at every step and nothing leaving your network. Your analysts stay in control: nothing changes until a person approves.</p>
+      <div class="actions"><a class="btn btn-primary" href="#contact">Request a demo <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="#bot">Watch the bot work <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-play"/></svg></a></div>
+    </div>
+    <div class="hero-stage" data-reveal>
+      <figure class="hero-shot"><img src="assets/img/mock/cosmo-overview-live.webp" width="1600" height="909" alt="The C.O.S.M.O Overview: live traffic bars for every source arcing over a glowing 3D Earth, the live threat map with attack paths, and critical-alert counts down the side." fetchpriority="high"></figure>
+    </div>
+  </div>
+  <div class="trust">
+    <div class="wrap">
+      <ul>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg>Built by Cypher, LLC</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flag"/></svg>SDVOSB</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg>Runs on your own server</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg>Works offline</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cart"/></svg>Buy direct from Cypher</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section intro" data-tab="home" id="what" aria-labelledby="what-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow"><img class="eyebrow-mark" src="assets/img/cosmo-lock.png" width="22" height="22" alt="">What C.O.S.M.O is</p>
+      <h2 id="what-h">An AI cyber threat intelligence platform that runs on your server, with an AI that answers to your team.</h2>
+      <p class="lead">C.O.S.M.O takes in your alerts, logs, documents and threat intelligence, then triages, investigates, hunts, responds and predicts, with an assistant at every step. It runs entirely on hardware you control. Nothing leaves your network, and nothing changes until a person approves.</p>
+    </div>
+
+    <p class="built-for" data-reveal><span class="bf-label">Built for</span> Security operations teams&ensp;&middot;&ensp;Incident responders &amp; threat hunters&ensp;&middot;&ensp;Defense, intelligence &amp; critical infrastructure&ensp;&middot;&ensp;Teams whose data can&rsquo;t go to the cloud</p>
+
+    <div class="solves" data-stagger>
+      <div class="solve">
+        <span class="solve-no">01</span>
+        <p class="prob">Too many alerts, too few analysts.</p>
+        <p class="sol">C.O.S.M.O works the whole queue. It scores every alert with its reasons and tells you what actually needs a person. The rest is grouped, explained and ready to close.</p>
+      </div>
+      <div class="solve">
+        <span class="solve-no">02</span>
+        <p class="prob">Response takes too long.</p>
+        <p class="sol">It writes the plan and a ready-to-paste work order for every team (firewall blocks, detection rules, searches), built from the evidence and waiting for your approval.</p>
+      </div>
+      <div class="solve">
+        <span class="solve-no">03</span>
+        <p class="prob">Your data can&rsquo;t leave the building.</p>
+        <p class="sol">Self-hosted and able to run fully offline. Your logs, your models, your network. C.O.S.M.O never phones home, so it fits classified and air-gapped work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="home" id="chatbot" aria-labelledby="chat-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Ask in plain language</span>
+      <h2 id="chat-h">C.O.S.M.O Bot answers from your own intelligence.</h2>
+      <p class="lead">Ask about a threat, paste a report, or request a playbook. Every answer cites the data on your own server, and anything that changes your network waits for a person to approve it.</p>
+    </div>
+    <div class="chatx">
+      <figure class="chatx-shot" data-reveal>
+        <div class="botcard">
+          <div class="botcard-head">
+            <img class="botcard-ava" src="assets/img/cosmo-bot.jpg" width="52" height="52" alt="" loading="lazy">
+            <div class="botcard-id">
+              <b>C.O.S.M.O Bot</b>
+              <span class="botcard-status"><i></i>Online &middot; Intelligence</span>
+            </div>
+          </div>
+          <img class="botcard-body" src="assets/img/views/bot-panel.webp" width="604" height="712" alt="C.O.S.M.O Bot queue: 58 incidents past the time to decide, 12 threats with no playbook yet, and 2 containment actions waiting for a person to approve." loading="lazy">
+        </div>
+      </figure>
+      <div class="chatx-copy" data-reveal>
+        <ul class="cap-list tight">
+          <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg><p><b>Answers cite your data.</b> Every reply points back to the incidents, reports and rules on your own server, so you can check the working.</p></li>
+          <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg><p><b>Paste a report, get it read.</b> Drop in a PDF or a bulletin and the bot pulls out the addresses, fingerprints and attacker methods.</p></li>
+          <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg><p><b>It takes you to the work.</b> Ask for a playbook or a hunt and it opens the right screen, or runs it and waits for your approval.</p></li>
+        </ul>
+        <div class="chatx-ai" data-reveal>
+          <span class="chatx-ai-label">Choose which AI answers &mdash; or none at all</span>
+          <ul class="aichips">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg><div><b>Claude Code or Codex</b><small>Your subscription, on your computer</small></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg><div><b>Cloud AI</b><small>Claude, OpenAI, Azure Gov, Bedrock, GSA USAi</small></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg><div><b>Local model</b><small>Private, on this machine, free</small></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg><div><b>Network model</b><small>A model on a server you run</small></div></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shieldok"/></svg><div><b>No AI at all</b><small>Keyword search still works</small></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark morph" data-tab="platform" id="bot" aria-labelledby="bot-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal><p class="eyebrow">Watch the bot work</p><h2 id="bot-h">C.O.S.M.O Bot does the work.<br><span class="hl">You approve it.</span></h2></div>
+  </div>
+  <div class="morph-track">
+    <div class="morph-stage">
+      <div class="morph-sky" aria-hidden="true"><i style="--x:46%;--y:19%;--s:4.0;--o:0.65;--l:119px"></i><i style="--x:73%;--y:12%;--s:3.4;--o:0.58;--l:174px"></i><i style="--x:32%;--y:4%;--s:2.2;--o:0.43;--l:118px"></i><i style="--x:35%;--y:11%;--s:4.0;--o:0.06;--l:182px"></i><i style="--x:20%;--y:28%;--s:2.2;--o:0.58;--l:160px"></i><i style="--x:11%;--y:28%;--s:2.2;--o:0.56;--l:127px"></i><i style="--x:42%;--y:53%;--s:2.8;--o:0.54;--l:183px"></i><i style="--x:44%;--y:23%;--s:2.2;--o:0.58;--l:191px"></i><i style="--x:29%;--y:47%;--s:2.2;--o:0.55;--l:118px"></i></div>
+      <figure class="morph-screen">
+        <div class="morph-glass">
+          <img src="assets/img/bot-5-chat.jpg" alt="" loading="lazy">
+          <img src="assets/img/bot-1-queue.jpg" alt="" loading="lazy">
+          <img src="assets/img/bot-2-plan.jpg" alt="" loading="lazy">
+          <img src="assets/img/bot-3-approve.jpg" alt="" loading="lazy">
+          <img src="assets/img/bot-4-packs.jpg" alt="" loading="lazy">
+        </div>
+        <img class="morph-frame" src="assets/img/mock/macbook-frame.png" alt="">
+      </figure>
+      <div class="morph-texts">
+        <article class="mstep on" data-shot="0"><span class="mno">01</span><h3>It tells you what needs you.</h3><p>Open C.O.S.M.O and the bot is already on the page, with what needs a person today, most urgent first.</p></article>
+        <article class="mstep" data-shot="1"><span class="mno">02</span><h3>It offers to work the whole queue.</h3><p>Thousands of alerts, grouped so each machine needs one decision. One click hands the queue to the bot.</p></article>
+        <article class="mstep" data-shot="2"><span class="mno">03</span><h3>It comes back with a plan.</h3><p>The bot reads every waiting incident and says what it decided, and why, in plain English.</p></article>
+        <article class="mstep" data-shot="3"><span class="mno">04</span><h3>You see everything you approve.</h3><p>Every decision, every assignment and every team&rsquo;s work pack, on one page, before you press Approve.</p></article>
+        <article class="mstep" data-shot="4"><span class="mno">05</span><h3>Each team gets work it can paste in.</h3><p>Firewall commands, detection rules, searches and a PDF work order for every team, ready to copy or download.</p></article>
+      </div>
+    </div>
+  </div>
+  <div class="wrap"><p class="caption center">Real C.O.S.M.O screens with fictional demo data. Without an AI model connected the bot still decides from the evidence and your rules.</p></div>
+</section>
+
+<section class="section dark alt ingest" data-tab="platform" id="ingest" aria-labelledby="ing-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Bring your own data</span>
+      <h2 id="ing-h">Hook in what your sensors and tools already produce.</h2>
+      <p class="lead">C.O.S.M.O reads the formats a security team already has. Point it at a source once, or let it read on a schedule. Where you connect a log tool, it queries the data in place, so nothing is copied.</p>
+    </div>
+    <div class="ingest-grid">
+      <div class="ingest-group" data-reveal>
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg>Network &amp; security logs</h3>
+        <ul>
+          <li><b>Firewalls &amp; IPS</b><span>iptables, Fortinet, pfSense, Palo Alto, Cisco</span></li>
+          <li><b>Suricata / Snort</b><span>IDS alerts, EVE JSON</span></li>
+          <li><b>Zeek</b><span>conn, dns, http, ssl logs</span></li>
+          <li><b>Security tools (CEF, LEEF)</b><span>ArcSight, QRadar, Splunk</span></li>
+          <li><b>NetFlow / CSV / JSON</b><span>flow exports, custom logs</span></li>
+          <li><b>Syslog</b><span>servers, routers, switches</span></li>
+          <li><b>Web server logs</b><span>Apache, nginx, IIS</span></li>
+        </ul>
+      </div>
+      <div class="ingest-group" data-reveal style="--d:1">
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg>Documents &amp; reports</h3>
+        <ul>
+          <li><b>Upload documents</b><span>PDF, Word, PowerPoint, Excel, HTML, text</span></li>
+          <li><b>Watch a folder or share</b><span>mounted SMB / NFS / local path</span></li>
+          <li><b>Inspect a suspicious file</b><span>hashes, markers, indicators &mdash; never run</span></li>
+          <li><b>Mailbox</b><span>IMAP, phishing inbox, .eml files</span></li>
+          <li><b>Web pages</b><span>index a URL on a schedule</span></li>
+        </ul>
+      </div>
+      <div class="ingest-group" data-reveal style="--d:2">
+        <h3><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg>Connect your log tools</h3>
+        <ul>
+          <li><b>Splunk, Elastic &amp; Sentinel</b><span>read-only search, results checked against intelligence</span></li>
+          <li><b>Threat intelligence</b><span>TAXII, MISP, STIX 2.1, RSS feeds</span></li>
+          <li><b>Scheduled collectors</b><span>any saved source, read on a schedule</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="ingest-note" data-reveal>Addresses, fingerprints and attacker methods are pulled out and highlighted on the way in &mdash; so anything an analyst can read becomes something C.O.S.M.O can work with.</p>
+  </div>
+</section>
+
+<section class="section dark alt" data-tab="home" id="compare" aria-labelledby="vs-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Before and after</span>
+      <h2 id="vs-h">Same morning. Two very different jobs.</h2>
+    </div>
+    <table class="vs" data-reveal>
+      <caption class="sr">What an analyst does by hand compared with what C.O.S.M.O Bot does</caption>
+      <thead><tr><th scope="col"><span class="sr">Task</span></th><th scope="col" class="h-hand"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-person"/></svg>By hand</th><th scope="col" class="h-bot"><img src="assets/img/cosmo-bot.jpg" width="320" height="320" alt="">With C.O.S.M.O Bot</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Overnight alerts</th><td>Open each one and read it</td><td>Repeats on the same machine become one incident</td></tr>
+        <tr><th scope="row">Is it real?</th><td>A judgment call, notes in a spreadsheet</td><td>A score with every reason and its points, and what was checked and ruled out</td></tr>
+        <tr><th scope="row">Who takes it?</th><td>Ask around who has time</td><td>The person on the right team with the least open work</td></tr>
+        <tr><th scope="row">Firewall blocks</th><td>Write commands for each make, one by one</td><td>Commands for six makes, ready to paste, your own networks left out</td></tr>
+        <tr><th scope="row">Detection</th><td>Write rules and searches from scratch</td><td>Suricata, Sigma, YARA, Splunk and Defender, built by code and checked</td></tr>
+        <tr><th scope="row">Paperwork</th><td>Write it up and email each team</td><td>A PDF work order per team, waiting in My Tasks</td></tr>
+        <tr><th scope="row">The record</th><td>Piece together who changed what</td><td>Each change written in the approver&rsquo;s name</td></tr>
+        <tr class="you-row"><th scope="row">Your part</th><td>All of the above</td><td><b>Read one summary. Press Approve.</b></td></tr>
+      </tbody>
+    </table>
+    <p class="illus-note">We do not quote hours saved: that depends on your queue. Ask us to run a demo on data like yours.</p>
+  </div>
+</section>
+
+<section class="section dark deep" data-tab="capabilities" id="workflow" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">The full workflow</span>
+      <h2 id="story-h">Beyond triage: hunt for it, then respond.</h2>
+    </div>
+
+    <div class="feature" data-reveal>
+      <div class="feature-text">
+        <span class="eyebrow">Hunt</span>
+        <h3>Sweep your own data for what no alert caught.</h3>
+        <p>C.O.S.M.O suggests where to look for the groups and malware already in your queue, then sweeps your logs and computers for traces. Every hunt only reads, it never changes anything.</p>
+        <ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Suggested sweeps for named malware and groups</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Anything it finds opens as a case to investigate</span></li></ul>
+      </div>
+      <div class="feature-media" data-reveal="right">
+        <div class="radar" aria-hidden="true">
+          <svg viewBox="0 0 300 300">
+            <defs><linearGradient id="rsweep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4fd1ff" stop-opacity="0"/><stop offset="100%" stop-color="#4fd1ff" stop-opacity=".32"/></linearGradient></defs>
+            <circle class="rg" cx="150" cy="150" r="142"/><circle class="rg" cx="150" cy="150" r="100"/><circle class="rg" cx="150" cy="150" r="56"/>
+            <line class="rg" x1="150" y1="8" x2="150" y2="292"/><line class="rg" x1="8" y1="150" x2="292" y2="150"/>
+            <g class="sweep"><path d="M150 150 L150 8 A142 142 0 0 1 270 82 Z" fill="url(#rsweep)"/></g>
+            <circle class="blip" cx="212" cy="104" r="4"/><circle class="blip b2" cx="96" cy="196" r="4"/><circle class="blip b3" cx="188" cy="214" r="3.5"/><circle class="blip b4" cx="110" cy="92" r="3"/>
+            <circle class="rcore" cx="150" cy="150" r="4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature flip" data-reveal>
+      <div class="feature-text">
+        <span class="eyebrow">Respond</span>
+        <h3>A response plan, generated and waiting for your approval.</h3>
+        <p>C.O.S.M.O lays out the steps to stop the attack and who does each one. Nothing is blocked, isolated or cut off until a person approves it.</p>
+      </div>
+      <div class="feature-media" data-reveal="left">
+        <ol class="rplan">
+          <li><span class="rp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></span><div><b>Block at the edge</b><span>Firewall rules for six makes, ready to paste</span></div></li>
+          <li><span class="rp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg></span><div><b>Isolate the machine</b><span>Cut it off from the rest of the network</span></div></li>
+          <li><span class="rp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-search"/></svg></span><div><b>Collect the evidence</b><span>Sealed to the activity record, in your name</span></div></li>
+          <li class="wait"><span class="rp-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-person"/></svg></span><div><b>Waiting for your approval</b><span>Nothing runs until a person says so</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="capabilities" id="tools" aria-labelledby="tools-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">See it the way your analysts do</span>
+      <h2 id="tools-h">The hard parts, shown so anyone can read them.</h2>
+    </div>
+
+    <div class="feature" data-reveal>
+      <div class="feature-text">
+        <span class="eyebrow">Scope &amp; Impact</span>
+        <h3>See how close an attacker is to what matters.</h3>
+        <p>C.O.S.M.O maps every machine by how many steps it sits from your most valuable systems, and draws the paths an attacker could take to reach them.</p>
+      </div>
+      <div class="feature-media" data-reveal="right">
+        <figure class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/scope.jpg" width="1440" height="900" alt="C.O.S.M.O Scope &amp; Impact: lines from each threat, through the warning signs that matched, to the machines they touched, with the machines to check first." loading="lazy"></div></figure>
+      </div>
+    </div>
+
+    <div class="feature flip" data-reveal>
+      <div class="feature-text">
+        <span class="eyebrow">Response playbook</span>
+        <h3>The attacker&rsquo;s likely route, laid out as plays.</h3>
+        <p>Each play is a step to block, isolate, watch or reset, across your boundary, network, computers and accounts. Nothing runs until a person approves.</p>
+      </div>
+      <div class="feature-media" data-reveal="left">
+        <figure class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/respond.jpg" width="1600" height="1000" alt="A C.O.S.M.O response playbook: the attacker's likely route drawn across your boundary, network, computers and accounts, each step waiting for approval." loading="lazy"></div></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="capabilities" id="views" aria-labelledby="views-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Inside C.O.S.M.O</span>
+      <h2 id="views-h">The screens behind every decision.</h2>
+      <p class="lead">Reports, hunts, forecasts and playbooks, in the view your team works in. Flip through a few.</p>
+    </div>
+    <div class="carousel" data-carousel data-reveal>
+      <div class="caro-win">
+        <div class="caro-track">
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/playbook.webp" width="1600" height="929" alt="Response playbook: the attacker&rsquo;s likely route as plays, each move with an owner." loading="lazy"></div></div><figcaption>Response playbook: the attacker&rsquo;s likely route as plays, each move with an owner.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/scope.webp" width="1600" height="929" alt="Scope &amp; Impact: every alert traced from the threat to the machines it touched." loading="lazy"></div></div><figcaption>Scope &amp; Impact: every alert traced from the threat to the machines it touched.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/hunt.webp" width="1600" height="929" alt="Network hunt: sweep hundreds of machines for traces no alert caught." loading="lazy"></div></div><figcaption>Network hunt: sweep hundreds of machines for traces no alert caught.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/predict.webp" width="1600" height="929" alt="Predict: the groups most likely to come after you next, closest first." loading="lazy"></div></div><figcaption>Predict: the groups most likely to come after you next, closest first.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/most-wanted.webp" width="1600" height="929" alt="Most Wanted: the top threat groups as wanted posters, ranked by how much they threaten you." loading="lazy"></div></div><figcaption>Most Wanted: the top threat groups as wanted posters, ranked by how much they threaten you.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/report.webp" width="1600" height="929" alt="Daily threat report: how much it matters to you, scored and sourced." loading="lazy"></div></div><figcaption>Daily threat report: how much it matters to you, scored and sourced.</figcaption></figure>
+          <figure class="caro-slide"><div class="shot"><div class="shot-bar"><i></i><i></i><i></i><span>C.O.S.M.O</span></div><div class="shot-img"><img src="assets/img/views/report-methods.webp" width="1600" height="929" alt="Every attacker method in a report, laid out in the order an attack goes." loading="lazy"></div></div><figcaption>Every attacker method in a report, laid out in the order an attack goes.</figcaption></figure>
+        </div>
+      </div>
+      <button class="caro-btn prev" type="button" aria-label="Previous view"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="caro-btn next" type="button" aria-label="Next view"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <div class="caro-dots"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="capabilities" id="proof" aria-labelledby="proof-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Proof, not promises</span>
+      <h2 id="proof-h">Every answer comes with its working.</h2>
+      <p class="lead">No black box. Press any score to see each point. Open any pack to see each file.</p>
+    </div>
+    <div class="proof">
+      <article class="pcard why-card" data-reveal>
+        <p class="eyebrow">The score</p><h3>Every score shows what went into it.</h3>
+        <figure class="shot" style="margin-top:18px"><div class="shot-img"><img src="assets/img/score-evidence.jpg" width="1440" height="900" loading="lazy" alt="A real C.O.S.M.O alert: the risk score dial with severity, indicator confidence, earlier hits, known actors and what matched."></div></figure>
+      </article>
+      <article class="pcard order-card" data-reveal style="--d:1">
+        <span class="pk">The work order</span>
+        <h3>One PDF per team. Checklist first.</h3>
+        <figure class="sheet"><img src="assets/img/work-order.jpg" width="700" height="389" alt="The top of a real C.O.S.M.O work order PDF for the firewall team: what to block, and a checklist for Palo Alto, FortiGate, Cisco ASA, pfSense, Linux and Windows firewalls." loading="lazy"></figure>
+        <ul class="files">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg>2026-11-01 1a Firewall team - work order.pdf</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg>2026-11-01 1a Firewall team - Palo Alto commands.txt</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-download"/></svg>2026-11-01 1a Firewall team work pack.zip</li>
+        </ul>
+        <p class="pnote">The top of a real work order PDF from the app. File names start with the date and the day&rsquo;s batch.</p>
+      </article>
+      <article class="pcard fmt-card" data-reveal style="--d:2">
+        <div>
+          <span class="pk">Firewall commands for</span>
+          <ul class="marks"><li>Palo Alto</li><li>FortiGate</li><li>Cisco ASA</li><li>pfSense</li><li>iptables</li><li>Windows Firewall</li></ul>
+        </div>
+        <div>
+          <span class="pk">Rules and searches in</span>
+          <ul class="marks alt"><li>Suricata</li><li>Sigma</li><li>YARA</li><li>Splunk SPL</li><li>Microsoft KQL</li></ul>
+        </div>
+        <p class="pnote">Plus a block list any firewall imports, a DNS block list, and machines, files and accounts to check.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="capabilities" id="constellation" aria-labelledby="f4">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-text" data-reveal>
+        <span class="eyebrow">The Constellation</span>
+        <h2 id="f4">Five AIs take malware apart. None of them runs it.</h2>
+        <p>Drop a file or script into the Malware Lab and convene the council. Each member has one job. If you connect several AI models, each member can be a different one.</p>
+        <ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>What it does, step by step, in plain English</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>The code, with comments above the lines that matter</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Rules that also catch changed versions, tested on the sample</span></li></ul>
+        <div class="legend"><span><i style="background:var(--green)"></i>Confirmed by the line of code</span><span><i style="background:var(--violet)"></i>Suspected: a member&rsquo;s reading</span></div>
+        <p class="muted small">With no AI connected, C.O.S.M.O still comments the code and builds the rules itself.</p>
+      </div>
+      <div class="feature-media" data-reveal>
+        <div class="council">
+          <svg viewBox="0 0 600 470" role="img" aria-labelledby="council-t"><title id="council-t">The Constellation: five AI members around the file they read. Polaris chairs. Vega reads the code, Orion works out what it does, Lyra writes the rules, Draco argues the other side.</title>
+            <defs><radialGradient id="cg"><stop offset="0" stop-color="#4fd1ff" stop-opacity=".7"/><stop offset=".5" stop-color="#4fd1ff" stop-opacity=".12"/><stop offset="1" stop-color="#4fd1ff" stop-opacity="0"/></radialGradient><radialGradient id="cgd"><stop offset="0" stop-color="#ff5a5f" stop-opacity=".45"/><stop offset="55%" stop-color="#ff5a5f" stop-opacity=".08"/><stop offset="100%" stop-color="#ff5a5f" stop-opacity="0"/></radialGradient><radialGradient id="cgo"><stop offset="0" stop-color="#f7931e" stop-opacity=".8"/><stop offset=".5" stop-color="#f7931e" stop-opacity=".15"/><stop offset="1" stop-color="#f7931e" stop-opacity="0"/></radialGradient></defs>
+            <g class="bgstars" aria-hidden="true"><circle cx="48" cy="54" r="1.3"/><circle cx="96" cy="110" r="0.9"/><circle cx="36" cy="300" r="1.1"/><circle cx="70" cy="420" r="0.9"/><circle cx="150" cy="60" r="1"/><circle cx="210" cy="120" r="0.8"/><circle cx="250" cy="40" r="1.2"/><circle cx="360" cy="46" r="0.9"/><circle cx="430" cy="90" r="1.1"/><circle cx="520" cy="60" r="1.3"/><circle cx="560" cy="130" r="0.9"/><circle cx="572" cy="250" r="1.1"/><circle cx="540" cy="340" r="0.9"/><circle cx="500" cy="430" r="1.2"/><circle cx="430" cy="300" r="0.8"/><circle cx="330" cy="330" r="0.9"/><circle cx="270" cy="300" r="0.8"/><circle cx="160" cy="330" r="1"/><circle cx="110" cy="250" r="0.9"/><circle cx="300" cy="150" r="0.8"/><circle cx="380" cy="200" r="0.8"/><circle cx="230" cy="210" r="0.8"/><circle cx="90" cy="180" r="1"/><circle cx="510" cy="200" r="0.9"/><circle cx="260" cy="90" r="0.7"/><circle cx="420" cy="440" r="0.8"/><circle cx="60" cy="130" r="0.8"/><circle cx="560" cy="400" r="0.7"/><circle cx="340" cy="420" r="0.7"/><circle cx="470" cy="260" r="0.8"/><circle cx="200" cy="440" r="0.7"/><circle cx="130" cy="360" r="0.7"/><circle cx="390" cy="120" r="0.7"/><circle cx="300" cy="455" r="0.8"/></g>
+            <g class="links" aria-hidden="true"><line x1="300" y1="251" x2="330" y2="62"/><line x1="300" y1="251" x2="500" y2="150"/><line x1="300" y1="251" x2="100" y2="212"/><line x1="300" y1="251" x2="448" y2="372"/><line x1="300" y1="251" x2="152" y2="406"/></g>
+            <g class="pulses" aria-hidden="true"><line x1="300" y1="251" x2="330" y2="62"/><line x1="300" y1="251" x2="500" y2="150"/><line x1="300" y1="251" x2="100" y2="212"/><line x1="300" y1="251" x2="448" y2="372"/><line x1="300" y1="251" x2="152" y2="406"/></g>
+            <circle class="danger" cx="300" cy="251" r="58" fill="url(#cgd)"/>
+            <g class="file"><rect x="214" y="222" width="172" height="58" rx="0"/><text x="300" y="246" text-anchor="middle" class="fn">svch0st-loader.ps1</text><text x="300" y="267" text-anchor="middle" class="fs">only read, never run</text></g>
+            <g class="mem chair"><circle cx="330" cy="62" r="34" fill="url(#cgo)" class="halo"/><circle cx="330" cy="62" r="7" class="dot"/><text x="330" y="28" text-anchor="middle" class="nm">Polaris</text></g>
+            <g class="mem"><circle cx="500" cy="150" r="30" fill="url(#cg)" class="halo"/><circle cx="500" cy="150" r="6" class="dot"/><text x="500" y="118" text-anchor="middle" class="nm">Vega</text></g>
+            <g class="mem"><circle cx="100" cy="212" r="30" fill="url(#cg)" class="halo"/><circle cx="100" cy="212" r="6" class="dot"/><text x="100" y="180" text-anchor="middle" class="nm">Orion</text></g>
+            <g class="mem"><circle cx="448" cy="372" r="30" fill="url(#cg)" class="halo"/><circle cx="448" cy="372" r="6" class="dot"/><text x="448" y="412" text-anchor="middle" class="nm">Lyra</text></g>
+            <g class="mem"><circle cx="152" cy="406" r="30" fill="url(#cg)" class="halo"/><circle cx="152" cy="406" r="6" class="dot"/><text x="152" y="446" text-anchor="middle" class="nm">Draco</text></g>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <ul class="roster" data-reveal>
+      <li class="chair"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>Polaris</b><span class="role">Makes the call</span><p>Weighs the votes, writes the summary and the plan to stop the next version.</p></li>
+      <li><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>Vega</b><span class="role">Reads the code</span><p>Reads every function line by line and writes the comments.</p></li>
+      <li><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>Orion</b><span class="role">Works out what it does</span><p>Works out what the program does on a machine, step by step.</p></li>
+      <li><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>Lyra</b><span class="role">Writes what catches it</span><p>Picks what is hard for the author to change.</p></li>
+      <li><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg><b>Draco</b><span class="role">Double-checks everything</span><p>Challenges every claim the code does not support.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section dark alt" data-tab="capabilities" id="platform" aria-labelledby="plat-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">One platform</span>
+      <h2 id="plat-h">Everything else a security team needs, in one place.</h2>
+    </div>
+    <ul class="cap-list">
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg><p><b>3D threat map.</b> See where attacks come from, drawn to your network on a live 3D Earth.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-trend"/></svg><p><b>Predict.</b> Who is likely to come next, and why, from the groups and methods aimed at you.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shieldok"/></svg><p><b>Proof of defense.</b> Every detection rule is tested against the threat, approved, then retested.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-clip"/></svg><p><b>Standards.</b> Mapped to NIST 800-53, SOC 2 and OWASP, control by control.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg><p><b>Offline mode.</b> Runs fully offline. Updates arrive as signed packs, nothing phones home.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mask"/></svg><p><b>Most Wanted.</b> The top hacking groups, stamped the moment they are seen on your network.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-eye"/></svg><p><b>Dark web.</b> Leak sites and forums watched for the names and data you care about.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg><p><b>Respond.</b> Ready playbooks where a person approves each action before it runs.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-book"/></svg><p><b>Threat library.</b> Groups, malware and campaigns on MITRE ATT&amp;CK, STIX 2.1, CISA KEV, TAXII and MISP.</p></li>
+      <li><svg class="bi" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg><p><b>AI use on your network.</b> Which machines call which AI services. Never what anyone typed.</p></li>
+    </ul>
+    <ul class="statline" data-reveal>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg><b data-count="6">6</b><span>firewall makes in every work pack</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg><b data-count="5">5</b><span>rule &amp; search formats, ready to paste</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-spark"/></svg><b data-count="5">5</b><span>AI members on the malware council</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-layers"/></svg><b data-count="40">40</b><span>incidents in one auto triage plan</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-replay"/></svg><b data-count="30">30</b><span>minutes before a change lapses</span></li>
+      <li class="o"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg><b data-count="0">0</b><span>outside connections, offline</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section dark" data-tab="platform" id="runs" aria-labelledby="arch-h">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Runs anywhere, including offline</span>
+      <h2 id="arch-h">Your server, your network, your choice of AI.</h2>
+      <p class="lead">C.O.S.M.O is one server and one database that you run. Nothing has to leave your network, and in offline mode nothing does.</p>
+    </div>
+    <div class="window dark" data-reveal style="padding:clamp(16px,3vw,40px);background:radial-gradient(800px 400px at 50% 40%, rgba(30,60,180,.3), transparent 70%), #04071a">
+      <div class="archx">
+        <svg class="archx-flowlines" viewBox="0 0 1000 440" preserveAspectRatio="none" aria-hidden="true">
+          <path class="fl" d="M300 70 C410 70 410 220 500 220"/>
+          <path class="fl" d="M300 158 C410 158 410 220 500 220"/>
+          <path class="fl" d="M300 282 C410 282 410 220 500 220"/>
+          <path class="fl" d="M300 370 C410 370 410 220 500 220"/>
+          <path class="fl out" d="M500 220 C590 220 590 70 700 70"/>
+          <path class="fl out" d="M500 220 C590 220 590 158 700 158"/>
+          <path class="fl out" d="M500 220 C590 220 590 282 700 282"/>
+          <path class="fl out" d="M500 220 C590 220 590 370 700 370"/>
+          <path class="fl down" d="M500 250 V360"/>
+        </svg>
+        <div class="archx-col">
+          <span class="archx-cap">What comes in</span>
+          <div class="archx-item"><span class="archx-logos"><img src="assets/img/logos/paloalto.svg" alt="Palo Alto Networks"><img src="assets/img/logos/cisco.svg" alt="Cisco"><img src="assets/img/logos/fortinet.svg" alt="Fortinet"></span><div class="archx-txt"><strong>Firewalls &amp; IPS</strong><span>Syslog, CEF, Suricata, Zeek</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><img src="assets/img/logos/splunk.svg" alt="Splunk"><img src="assets/img/logos/elastic.svg" alt="Elastic"></span><div class="archx-txt"><strong>Logs &amp; your tools</strong><span>Splunk, Elasticsearch, SQL, S3, Azure</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></span><div class="archx-txt"><strong>Threat intelligence</strong><span>RSS, TAXII, MISP, STIX</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg></span><div class="archx-txt"><strong>Signed content packs</strong><span>On removable media, when offline</span></div></div>
+        </div>
+        <div class="archx-core">
+          <span class="archx-cap center">Your network</span>
+          <img class="archx-mark" src="assets/img/cosmo-lock.png" width="200" height="295" alt="">
+          <strong class="archx-server-name">C.O.S.M.O server</strong>
+          <span class="archx-server-sub">Windows, Linux, macOS or Docker, with its own PostgreSQL database</span>
+          <div class="archx-flow" aria-hidden="true"><i></i></div>
+          <div class="archx-teams-card">
+            <span class="archx-teams-label">What your team gets</span>
+            <strong class="archx-teams">Work orders, work packs &amp; My Tasks</strong>
+          </div>
+        </div>
+        <div class="archx-col">
+          <span class="archx-cap">Which AI answers, your choice</span>
+          <div class="archx-item"><span class="archx-logos"><img src="assets/img/logos/claude.svg" alt="Claude"><img src="assets/img/logos/openai.svg" alt="OpenAI"></span><div class="archx-txt"><strong>Commercial AI</strong><span>Claude or OpenAI</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><img src="assets/img/logos/aws.svg" alt="Amazon Web Services"></span><div class="archx-txt"><strong>Government cloud AI</strong><span>Azure Government, Bedrock, GSA USAi</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><img src="assets/img/logos/ollama.svg" alt="Ollama"></span><div class="archx-txt"><strong>Local models</strong><span>Ollama, LM Studio, vLLM, llama.cpp</span></div></div>
+          <div class="archx-item"><span class="archx-logos"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shieldok"/></svg></span><div class="archx-txt"><strong>No AI at all</strong><span>Triage, packs and rules still work</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="cols" style="margin-top:56px">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg></div><h3>Install it where you work</h3><p>Windows Server 2019, 2022 or 2025, Linux, macOS, or Docker and Podman on any VM or cloud. A team server people reach with only a browser.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg></div><h3>Run it with no internet</h3><p>Offline mode opens no outside connection. Intelligence and updates come in as signed files, checked before anything is installed.</p></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg></div><h3>Marked for government</h3><p>Classification banners and portion markings, DoD sign-in rules, smart card sign-in and FIPS mode. <a href="#government">How government mode works</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="deployment" id="government" aria-labelledby="gov-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Government and closed networks</span>
+      <h2 id="gov-h">Built to run where the internet is not allowed.</h2>
+      <p class="lead">C.O.S.M.O runs on a server you control. In offline mode it opens no connection outside your own network. New intelligence and new versions arrive on removable media, signed by Cypher, and are checked before anything is installed.</p>
+    </div>
+    <div class="cols" style="margin-top:clamp(28px,3.5vw,48px)">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flag"/></svg></div><h3>Classification markings</h3><p>A system banner, and markings on what comes in: reports, indicators, documents and files, written the way the CAPCO register and DoDM 5200.01 write them, with CUI under 32 CFR 2002.</p><p class="muted">A person marks. C.O.S.M.O carries the mark, displays it and warns. A copy licensed for CUI cannot be switched to SECRET locally.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg></div><h3>DoD sign-in rules</h3><ul class="lines"><li>Three wrong passwords lock the account for at least 30 minutes</li><li>Passwords of 15 characters or more, changed every 60 days</li><li>Idle sign-out at 15 minutes or less, which cannot be switched off</li><li>Smart card (CAC/PIV) and two-step sign-in</li></ul></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg></div><h3>FIPS mode</h3><p>One setting switches on the FIPS cryptography provider before anything else starts and runs a self-test. If the self-test fails, C.O.S.M.O does not start.</p><p class="muted">C.O.S.M.O is not on the DoDIN Approved Products List. It is ready to start that process: FIPS mode, IPv6, DoD sign-in rules, audit with source address, and CAC/PIV.</p></div>
+    </div>
+    <div class="cols" style="margin-top:clamp(20px,2.5vw,40px)">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></div><h3>Government clouds</h3><p>Azure Government, Amazon Bedrock in GovCloud and GSA USAi, or your agency&rsquo;s own AI gateway: paste the address and key, pick a model.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg></div><h3>On your own hardware</h3><p>Ollama, LM Studio, vLLM or llama.cpp. Only models from American developers are offered for download.</p></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shieldok"/></svg></div><h3>No AI at all</h3><p>Triage decides from the evidence and your routing rules, and the work packs and Malware Lab rules are still built.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark alt" data-tab="deployment" id="security" aria-labelledby="sec-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Security</span>
+      <h2 id="sec-h">A security tool should be the hardest thing on your network to fool.</h2>
+      <p class="lead">C.O.S.M.O reads text attackers can write: alert data, dark web posts, files. So it treats all of it as data, changes nothing without a person, and keeps a record nobody can quietly edit.</p>
+    </div>
+    <div class="cols" style="margin-top:clamp(28px,3.5vw,48px)">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-file"/></svg></div><h3>An incident record you can check</h3><p>Download a case record and its fingerprint is written to the sealed activity record. Paste a copy back later and C.O.S.M.O says whether it was edited.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flask"/></svg></div><h3>Files are read, never run</h3><p>Uploaded logs, documents and malware samples are read as data. The Malware Lab and the council take code apart without executing it.</p></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg></div><h3>Signed licenses and updates</h3><p>Licenses, content packs and updates are signed with Ed25519 and checked offline against a key built into C.O.S.M.O.</p></div>
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg></div><h3>FIPS mode</h3><p>The FIPS provider starts before anything else, with a self-test. If it fails, C.O.S.M.O does not start.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-person"/></svg></div><h3>Sign-in you control</h3><p>Single sign-on, smart cards (CAC/PIV), two-step sign-in, lockout and idle sign-out rules, set by an administrator.</p></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-unplug"/></svg></div><h3>Nothing leaves unless you allow it</h3><p>It runs on your server. Offline mode stops every outside connection, including hosted AI.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark alt" data-tab="home" id="buy" aria-labelledby="buy-h">
+  <div class="wrap buy">
+    <div class="buy-text" data-reveal>
+      <span class="eyebrow">How to buy</span>
+      <h2 id="buy-h">Buy direct from Cypher, LLC.</h2>
+      <p class="lead">C.O.S.M.O comes straight from the team that builds it. Talk to us and we will set up a demo, size it for your network and get you a quote.</p>
+      <p class="muted">Prefer a contract vehicle? C.O.S.M.O is also available through Carahsoft and its reseller partners.</p>
+      <div class="actions"><a class="btn btn-primary" href="#contact">Talk to us <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="buy-card" data-reveal="right">
+      <span class="through">What to expect</span>
+      <span class="name">Straight from Cypher</span>
+      <p class="muted">We build C.O.S.M.O, so you work with us directly.</p>
+      <ul class="lines">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Demo and sizing from Cypher, LLC</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>A quote for your network and term</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Contract vehicles available if you need one</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="deployment" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="section-head center" data-reveal>
+      <span class="eyebrow">Request a demo</span>
+      <h2 id="contact-h">Tell us about your network. We will show you C.O.S.M.O on it.</h2>
+      <p class="lead">A demo runs on demo data: auto triage, a team&rsquo;s work pack, the Malware Lab, and the offline setup if you need it.</p>
+    </div>
+    <div class="contact-grid" style="margin-top:clamp(28px,3.5vw,48px)">
+      <div class="contact-form">
+        <form class="form" data-email="janderson@cypher-llc.com" action="https://formsubmit.co/janderson@cypher-llc.com" method="POST">
+          <input type="hidden" name="_subject" value="C.O.S.M.O demo request from cosmoplatform.ai">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://cosmoplatform.ai/thanks.html">
+          <div class="hp" aria-hidden="true"><label for="f-honey">Leave this empty</label><input id="f-honey" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <div class="pair">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-org">Organization</label><input id="f-org" name="organization" type="text" autocomplete="organization" required></div>
+          </div>
+          <div class="pair">
+            <div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="f-msg">What would you like to see?</label><textarea id="f-msg" name="message" rows="6" placeholder="For example: we run a small SOC on a closed network and want to see offline updates and the firewall work packs." required></textarea></div>
+          <div><button class="btn btn-primary" type="submit">Send request</button></div>
+          <small>We use what you send only to reply to you.</small>
+        </form>
+        <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+      </div>
+      <aside class="contact-side" aria-labelledby="direct-h">
+        <span class="eyebrow" id="direct-h">Or reach us directly</span>
+        <dl class="side-list">
+          <div><dt>Joseph Anderson, CEO</dt><dd><a href="mailto:janderson@cypher-llc.com">janderson@cypher-llc.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+15712061401">(571) 206-1401</a></dd></div>
+          <div><dt>Address</dt><dd>Cypher, LLC<br>44679 Endicott Dr, Suite 314<br>Ashburn, VA 20147</dd></div>
+          <div><dt>How to buy</dt><dd>Direct from Cypher, LLC. <a href="#buy">How to buy</a></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" data-tab="deployment" aria-labelledby="cypher-h">
+  <div class="wrap cypher">
+    <div class="cypher-text" data-reveal>
+      <img class="mark" src="assets/img/cypher-logo-white.png" width="400" height="74" alt="Cypher, LLC">
+      <h2 id="cypher-h">C.O.S.M.O is built and supported by Cypher, LLC.</h2>
+      <p>Cypher is a Service-Disabled Veteran-Owned Small Business, founded in 2009 and headquartered in Ashburn, Virginia. Its technical staff are 100% cleared and support customers onsite, across the Department of Defense, the Intelligence Community and civilian agencies.</p>
+      <div class="actions"><a class="btn btn-outline" href="https://cypher-llc.com/">cypher-llc.com <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <dl class="cypher-facts" data-reveal style="--d:2">
+      <div><dt>Status</dt><dd>Service-Disabled Veteran-Owned Small Business (SDVOSB)</dd></div>
+      <div><dt>Founded</dt><dd>2009</dd></div>
+      <div><dt>Address</dt><dd>44679 Endicott Dr, Suite 314<br>Ashburn, VA 20147</dd></div>
+      <div><dt>CAGE</dt><dd>6ZPW9</dd></div>
+      <div><dt>UEI</dt><dd>UVKETSQ7AQG3</dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+15712061401">(571) 206-1401</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="https://cypher-llc.com/"><img class="logo" src="assets/img/cypher-logo-white.png" width="400" height="74" alt="Cypher, LLC"></a>
+        <p>C.O.S.M.O is built and supported by Cypher, LLC, a Service-Disabled Veteran-Owned Small Business. 44679 Endicott Dr, Suite 314, Ashburn, VA 20147.</p>
+        <p>CAGE 6ZPW9 &middot; UEI UVKETSQ7AQG3</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="index.html#workflow">Workflow</a></li>
+          <li><a href="index.html#bot">Watch the bot work</a></li>
+          <li><a href="#government">Government</a></li>
+          <li><a href="#security">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="https://cypher-llc.com/">Cypher, LLC</a></li>
+          <li><a href="index.html#buy">How to buy</a></li>
+          <li><a href="https://www.carahsoft.com">Carahsoft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="#contact">Request a demo</a></li>
+          <li><a href="tel:+15712061401">(571) 206-1401</a></li>
+          <li><a href="mailto:janderson@cypher-llc.com">janderson@cypher-llc.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year>2026</span> Cypher, LLC. All rights reserved.</span>
+      <span>Screenshots show C.O.S.M.O with fictional demo data.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/site.js?v=11" defer></script>
+</body>
+</html>

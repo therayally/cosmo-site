@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Government and offline | C.O.S.M.O</title>
+<meta name="description" content="C.O.S.M.O runs fully offline with signed updates and content packs, classification markings, DoD sign-in rules, FIPS mode and the AI your agency allows.">
+<meta property="og:title" content="Government and offline | C.O.S.M.O">
+<meta property="og:description" content="C.O.S.M.O runs fully offline with signed updates and content packs, classification markings, DoD sign-in rules, FIPS mode and the AI your agency allows.">
+<meta property="og:image" content="https://cosmoplatform.ai/assets/img/hero-overview.jpg">
+<meta name="theme-color" content="#04071a">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></symbol><symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 19.5H3z"/><path d="M12 10v4"/><path d="M12 16.8v.2"/></symbol><symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></symbol><symbol id="i-cube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9z"/><path d="M12 12 20 7.5M12 12v9M12 12 4 7.5"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></symbol><symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/></symbol><symbol id="i-shieldok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol><symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="4.5" width="13" height="16.5" rx="2"/><path d="M9 4.5h6V7H9z"/><path d="m9 13.5 2 2 4-4"/></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="7" rx="2"/><rect x="3.5" y="13" width="17" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01M11 7.5h6M11 16.5h6"/></symbol><symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><path d="M12 14.5v2.5"/></symbol><symbol id="i-unplug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 3 18 18"/><path d="M8.5 16.4a5 5 0 0 1 6-.8"/><path d="M5 12.6a10 10 0 0 1 3.8-2.4M15.5 10.3A10 10 0 0 1 19 12.6"/><path d="M12 20h.01"/></symbol><symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol><symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol><symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></symbol><symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v15H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19v-3"/></symbol><symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6 6 0 0 1 3.5 5.8"/></symbol><symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="m18.5 15.5.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol><symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M14.5 8.5l2 2"/></symbol><symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol><symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.5 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol><symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h5l2 3h4l2-3h5"/><path d="M5.5 5h13L21 13v6H3v-6z"/></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol><symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol><symbol id="i-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="18" cy="20" r="1.3"/><path d="M3 4h2.5l2.2 11h11l2-8H6.5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol><symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol><symbol id="i-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-mask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c2.5-1.5 5.2-2 8-2s5.5.5 8 2c0 7-3.5 12-8 12S4 14 4 7z"/><path d="M8.5 11h2M13.5 11h2"/></symbol><symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol></defs></svg>
+<a class="skip" href="#main">Skip to the content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="C.O.S.M.O home"><img src="assets/img/cosmo-logo.png" width="360" height="123" alt="C.O.S.M.O, Bringing Order to Cyber Operations"></a>
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-links"><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#workflow">Workflow</a></li><li><a href="government.html" aria-current="page">Government</a></li><li><a href="security.html">Security</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <a class="btn btn-primary btn-sm" href="contact.html">Request a demo</a>
+      <details class="menu">
+        <summary><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"/></svg>Menu</summary>
+        <ul><li><a href="index.html#platform">Platform</a></li><li><a href="index.html#workflow">Workflow</a></li><li><a href="government.html">Government</a></li><li><a href="security.html">Security</a></li><li><a href="contact.html">Contact</a></li><li><a class="btn btn-primary" href="contact.html">Request a demo</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="page-head" aria-labelledby="ph">
+  <div class="wrap">
+    <div data-reveal>
+      <span class="eyebrow">Government and closed networks</span>
+      <h1 id="ph">Built to run where the internet is not allowed.</h1>
+      <p class="lead">C.O.S.M.O runs on a server you control. In offline mode it opens no connection outside your own network. New intelligence and new versions arrive on removable media, signed by Cypher, and are checked before anything is installed.</p>
+      <div class="actions"><a class="btn btn-primary" href="contact.html">Request a demo <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="#buy">How to buy</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark alt" aria-labelledby="g1">
+  <div class="wrap">
+    <div class="feature">
+      <div class="feature-text" data-reveal>
+        <span class="eyebrow">Offline mode</span>
+        <h2 id="g1">Updates and intelligence come in signed, and are checked first.</h2>
+        <p>A super admin switches offline mode on. Local AI, your database and your own log servers keep working. Everything else stops reaching out.</p>
+        <p>New threat intelligence comes as a signed content pack, and C.O.S.M.O shows what is inside before anyone imports it. An update is two files, the package and its signed manifest.</p>
+        <ul class="ticks"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Licenses, content packs and updates are signed (Ed25519) and checked offline</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>An update backs up first and replaces only the changed files</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>If the new version does not start, the old one is put back by itself</span></li></ul>
+        
+        <ul class="flow"><li class="flow-label">How it works</li><li class="step">Removable media</li><li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li><li class="step">Signature checked</li><li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li><li class="step person">Super admin installs</li><li class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></li><li class="step">Backup, then update</li></ul>
+      </div>
+      <div class="feature-media" data-reveal="right"><figure class="device-laptop "><div class="lid"><div class="screen"><img src="assets/img/offline.jpg" width="1440" height="900" alt="The C.O.S.M.O Admin panel with licenses, the newest version, the offline mode switch and the place to bring in a signed content pack." loading="lazy"></div></div><div class="base"></div></figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark deep" aria-labelledby="g2">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Government mode</span>
+      <h2 id="g2">Markings, sign-in rules and cryptography the way DoD expects them.</h2>
+      <p class="lead">Which classification levels a copy may use is set by its signed license. Outside government mode, C.O.S.M.O uses neutral wording, because it is just as useful to a bank or a hospital.</p>
+    </div>
+    <div class="cols">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flag"/></svg></div><h3>Classification markings</h3><p>A system banner, and markings on what comes in: reports, indicators, documents and files, written the way the CAPCO register and DoDM 5200.01 write them, with CUI under 32 CFR 2002.</p><p class="muted">A person marks. C.O.S.M.O carries the mark, displays it and warns. A copy licensed for CUI cannot be switched to SECRET locally.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-key"/></svg></div><h3>DoD sign-in rules</h3><ul class="lines"><li>Three wrong passwords lock the account for at least 30 minutes</li><li>Passwords of 15 characters or more, changed every 60 days</li><li>Idle sign-out at 15 minutes or less, which cannot be switched off</li><li>Smart card (CAC/PIV) and two-step sign-in</li></ul></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-lock"/></svg></div><h3>FIPS mode</h3><p>One setting switches on the FIPS cryptography provider before anything else starts and runs a self-test. If the self-test fails, C.O.S.M.O does not start.</p><p class="muted">C.O.S.M.O is not on the DoDIN Approved Products List. It is ready to start that process: FIPS mode, IPv6, DoD sign-in rules, audit with source address, and CAC/PIV.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" aria-labelledby="g3">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">AI on a government network</span>
+      <h2 id="g3">Use the AI you are allowed to use, or none.</h2>
+    </div>
+    <div class="window dark" data-reveal style="padding:clamp(16px,3vw,40px);background:radial-gradient(800px 400px at 50% 40%, rgba(30,60,180,.3), transparent 70%), #04071a">
+      <svg class="arch arch-wide" viewBox="0 0 1200 540" role="img" aria-labelledby="arch-t"><title id="arch-t">Where C.O.S.M.O runs: data comes in from your firewalls, sensors, logs and threat feeds, or from signed content packs when offline. The C.O.S.M.O server and its database run inside your network. You choose which AI answers, or none. Work goes out to your teams.</title><defs><linearGradient id="coreg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#10204f"/><stop offset="1" stop-color="#0a1030"/></linearGradient></defs><text class="cap" x="20" y="44">WHAT COMES IN</text><text class="cap" x="900" y="44">WHICH AI ANSWERS: YOUR CHOICE</text><rect class="box" x="20" y="70" width="280" height="78" rx="12"/><text class="lbl" x="40" y="103">Firewalls and sensors</text><text class="sub" x="40" y="127">Syslog, CEF, Suricata and Zeek</text><rect class="box" x="20" y="168" width="280" height="78" rx="12"/><text class="lbl" x="40" y="201">Logs and your tools</text><text class="sub" x="40" y="225">Splunk, Elasticsearch, SQL, S3, Azure</text><rect class="box" x="20" y="266" width="280" height="78" rx="12"/><text class="lbl" x="40" y="299">Threat intelligence</text><text class="sub" x="40" y="323">RSS, TAXII, MISP and STIX files</text><rect class="box" x="20" y="364" width="280" height="78" rx="12" style="stroke:rgba(247,147,30,.6)"/><text class="lbl" x="40" y="397">Signed content packs</text><text class="sub" x="40" y="421">On removable media, when offline</text><rect class="box" x="900" y="70" width="280" height="78" rx="12"/><text class="lbl" x="920" y="103">Government cloud AI</text><text class="sub" x="920" y="127">Azure Government, Bedrock, GSA USAi</text><rect class="box" x="900" y="168" width="280" height="78" rx="12"/><text class="lbl" x="920" y="201">Commercial AI</text><text class="sub" x="920" y="225">Claude or OpenAI</text><rect class="box" x="900" y="266" width="280" height="78" rx="12"/><text class="lbl" x="920" y="299">Local models</text><text class="sub" x="920" y="323">Ollama, LM Studio, vLLM, llama.cpp</text><rect class="box" x="900" y="364" width="280" height="78" rx="12"/><text class="lbl" x="920" y="397">No AI at all</text><text class="sub" x="920" y="421">Triage, packs and rules still work</text><rect class="zone" x="360" y="40" width="480" height="470" rx="18"/><text class="cap" x="384" y="74">YOUR NETWORK</text><rect class="core" x="420" y="150" width="360" height="160" rx="14"/><g transform="translate(582 168)" class="ic"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4fd1ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></g><text class="lbl" x="600" y="232" text-anchor="middle" style="font-size:19px">C.O.S.M.O server</text><text class="sub" x="600" y="257" text-anchor="middle">Windows Server, Linux, macOS or Docker</text><text class="sub" x="600" y="279" text-anchor="middle">with its own PostgreSQL database</text><rect class="box" x="420" y="400" width="360" height="86" rx="12"/><text class="lbl" x="600" y="436" text-anchor="middle">Your teams</text><text class="sub" x="600" y="460" text-anchor="middle">Work orders, work packs and My Tasks</text><path class="ln anim" d="M300 109 C360 109 360 230 420 230"/><path class="ln anim" d="M780 230 C840 230 840 109 900 109"/><path class="ln anim" d="M300 207 C360 207 360 230 420 230"/><path class="ln anim" d="M780 230 C840 230 840 207 900 207"/><path class="ln anim" d="M300 305 C360 305 360 230 420 230"/><path class="ln anim" d="M780 230 C840 230 840 305 900 305"/><path class="ln anim o" d="M300 403 C360 403 360 230 420 230"/><path class="ln anim" d="M780 230 C840 230 840 403 900 403"/><path class="ln anim" d="M600 310 V400"/><text class="capo" x="900" y="474">OFFLINE MODE: ONLY LOCAL MODELS</text><text class="sub" x="900" y="496">No connection leaves your network.</text></svg><div class="arch-mobile cols"><div class="col"><h3>What comes in</h3><ul class="lines"><li><strong>Firewalls and sensors</strong><br><span class="muted">Syslog, CEF, Suricata and Zeek</span></li><li><strong>Logs and your tools</strong><br><span class="muted">Splunk, Elasticsearch, SQL, S3, Azure</span></li><li><strong>Threat intelligence</strong><br><span class="muted">RSS, TAXII, MISP and STIX files</span></li><li><strong>Signed content packs</strong><br><span class="muted">On removable media, when offline</span></li></ul></div><div class="col"><h3>Inside your network</h3><ul class="lines"><li><strong>C.O.S.M.O server</strong><br><span class="muted">Windows Server, Linux, macOS or Docker, with its own PostgreSQL database</span></li><li><strong>Your teams</strong><br><span class="muted">Work orders, work packs and My Tasks</span></li></ul></div><div class="col"><h3>Which AI answers</h3><ul class="lines"><li><strong>Government cloud AI</strong><br><span class="muted">Azure Government, Bedrock, GSA USAi</span></li><li><strong>Commercial AI</strong><br><span class="muted">Claude or OpenAI</span></li><li><strong>Local models</strong><br><span class="muted">Ollama, LM Studio, vLLM, llama.cpp</span></li><li><strong>No AI at all</strong><br><span class="muted">Triage, packs and rules still work</span></li><li><strong>Offline mode</strong><br><span class="muted">Only local models. No connection leaves your network.</span></li></ul></div></div>
+    </div>
+    <div class="cols" style="margin-top:56px">
+      <div class="col" data-reveal><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globe"/></svg></div><h3>Government clouds</h3><p>Azure Government, Amazon Bedrock in GovCloud and GSA USAi, or your agency&rsquo;s own AI gateway: paste the address and key, pick a model.</p></div>
+      <div class="col" data-reveal style="--d:1"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-server"/></svg></div><h3>On your own hardware</h3><p>Ollama, LM Studio, vLLM or llama.cpp. Only models from American developers are offered for download.</p></div>
+      <div class="col" data-reveal style="--d:2"><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shieldok"/></svg></div><h3>No AI at all</h3><p>Triage decides from the evidence and your routing rules, and the work packs and Malware Lab rules are still built.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark alt" id="buy" aria-labelledby="buy-h">
+  <div class="wrap buy">
+    <div class="buy-text" data-reveal>
+      <span class="eyebrow">How to buy</span>
+      <h2 id="buy-h">Buy direct from Cypher, LLC.</h2>
+      <p class="lead">Talk to us and we will run a demo, size C.O.S.M.O for your network and get you a quote. As an SDVOSB, we sell to government direct.</p>
+      <p class="muted">Need a contract vehicle? C.O.S.M.O is also available through Carahsoft and its reseller partners.</p>
+      <div class="actions"><a class="btn btn-primary" href="contact.html">Talk to us <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <div class="buy-card" data-reveal="right">
+      <span class="through">What to expect</span>
+      <span class="name">Straight from Cypher</span>
+      <p class="muted">We build C.O.S.M.O, so you work with us directly.</p>
+      <ul class="lines"><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Demo and sizing from Cypher, LLC</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>A quote for your network and term</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg><span>Contract vehicles available if you need one</span></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section cta" aria-labelledby="cta-h">
+  <div class="wrap" data-reveal>
+    <img class="mark" src="assets/img/cosmo-lock.png" width="200" height="295" alt="" loading="lazy">
+    <h2 id="cta-h">Talk to a veteran-owned team about your network.</h2>
+    <p>Tell us what your network allows. We will show you how C.O.S.M.O fits it, offline or online.</p>
+    <div class="actions" style="justify-content:center"><a class="btn btn-primary" href="contact.html">Request a demo <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="tel:+15712061401">Call (571) 206-1401</a></div>
+  </div>
+</section>
+
+<section class="section dark" aria-labelledby="cypher-h">
+  <div class="wrap cypher">
+    <div class="cypher-text" data-reveal>
+      <img class="mark" src="assets/img/cypher-logo.png" width="400" height="70" alt="Cypher, LLC">
+      <h2 id="cypher-h">C.O.S.M.O is built and supported by Cypher, LLC.</h2>
+      <p>Cypher is a Service-Disabled Veteran-Owned Small Business, founded in 2009 and headquartered in Ashburn, Virginia. Its technical staff are 100% cleared and support customers onsite, across the Department of Defense, the Intelligence Community and civilian agencies.</p>
+      <div class="actions"><a class="btn btn-outline" href="https://cypher-llc.com/capabilities.html">Capabilities statement <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="btn btn-outline" href="https://cypher-llc.com/">cypher-llc.com <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <dl class="cypher-facts" data-reveal style="--d:2">
+      <div><dt>Status</dt><dd>Service-Disabled Veteran-Owned Small Business (SDVOSB)</dd></div>
+      <div><dt>Founded</dt><dd>2009</dd></div>
+      <div><dt>Address</dt><dd>44679 Endicott Dr, Suite 314<br>Ashburn, VA 20147</dd></div>
+      <div><dt>CAGE</dt><dd>6ZPW9</dd></div>
+      <div><dt>UEI</dt><dd>UVKETSQ7AQG3</dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+15712061401">(571) 206-1401</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="https://cypher-llc.com/"><img class="logo" src="assets/img/cypher-logo-white.png" width="400" height="70" alt="Cypher, LLC"></a>
+        <p>C.O.S.M.O is built and supported by Cypher, LLC, a Service-Disabled Veteran-Owned Small Business. 44679 Endicott Dr, Suite 314, Ashburn, VA 20147.</p>
+        <p>CAGE 6ZPW9 &middot; UEI UVKETSQ7AQG3</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="index.html#workflow">Workflow</a></li>
+          <li><a href="index.html#bot">Watch the bot work</a></li>
+          <li><a href="government.html">Government</a></li>
+          <li><a href="security.html">Security</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="https://cypher-llc.com/">Cypher, LLC</a></li>
+          <li><a href="https://cypher-llc.com/capabilities.html">Capabilities statement</a></li>
+          <li><a href="index.html#buy">How to buy</a></li>
+          <li><a href="https://www.carahsoft.com">Carahsoft</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="contact.html">Request a demo</a></li>
+          <li><a href="tel:+15712061401">(571) 206-1401</a></li>
+          <li><a href="mailto:janderson@cypher-llc.com">janderson@cypher-llc.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; <span data-year>2026</span> Cypher, LLC. All rights reserved.</span>
+      <span>Screenshots show C.O.S.M.O with fictional demo data.</span>
+    </div>
+  </div>
+</footer>
+<script src="js/site.js" defer></script>
+</body>
+</html>
