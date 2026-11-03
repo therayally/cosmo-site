@@ -1105,3 +1105,44 @@ svg.cn { display: block; width: 100%; max-width: 640px; height: auto; overflow: 
 }
 .h-media img[src*="imac"] { max-width: 520px; }
 @media (max-width: 900px) { .h-media img[src*="imac"] { max-width: 100%; } }
+
+/* ===== comets, galaxy and the flow diagram ===== */
+.h-hero canvas.comets, canvas.cn-fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.h-hero canvas.comets { z-index: 0; }
+.h-flow { padding: var(--pad) 0; border-top: 1px solid var(--border); background: radial-gradient(900px 420px at 10% 30%, rgba(79, 209, 255, .13), transparent 65%), radial-gradient(800px 420px at 50% 60%, rgba(167, 139, 250, .16), transparent 65%), radial-gradient(900px 420px at 95% 70%, rgba(247, 147, 30, .13), transparent 65%), #070b24; }
+.flow { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 4.6fr) minmax(0, 5.4fr); gap: clamp(36px, 7vw, 120px); align-items: center; }
+.flow-fx { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.flow-col { position: relative; z-index: 1; min-width: 0; }
+.flow-col h3 { font: 700 .74rem/1 var(--font); letter-spacing: .16em; text-transform: uppercase; margin-bottom: 14px; }
+.flow-in h3 { color: var(--cyan); } .flow-core h3 { color: #c4b5fd; } .flow-out h3 { color: var(--orange); }
+.flow ul, .flow ol { list-style: none; margin: 0; padding: 0; }
+.flow-in li { display: flex; align-items: center; gap: 12px; padding: 12px 16px; margin-bottom: 8px; color: var(--ink); font-weight: 600; background: rgba(79, 209, 255, .08); border: 1px solid rgba(79, 209, 255, .35); border-left-width: 4px; }
+.flow-in li svg { width: 20px; height: 20px; flex: none; }
+.flow-in .n1 { border-left-color: #4fd1ff; } .flow-in .n1 svg { color: #4fd1ff; }
+.flow-in .n2 { border-left-color: #78aaff; } .flow-in .n2 svg { color: #78aaff; }
+.flow-in .n3 { border-left-color: #a78bfa; } .flow-in .n3 svg { color: #a78bfa; }
+.flow-in .n4 { border-left-color: #4fd1ff; } .flow-in .n4 svg { color: #4fd1ff; }
+.flow-in .n5 { border-left-color: #ff8a8e; } .flow-in .n5 svg { color: #ff8a8e; }
+.flow-core { padding: 22px 22px 8px; background: linear-gradient(180deg, rgba(167, 139, 250, .22), rgba(79, 70, 229, .10)); border: 1px solid rgba(167, 139, 250, .6); box-shadow: 0 0 60px rgba(124, 92, 255, .25), inset 0 0 40px rgba(124, 92, 255, .10); }
+.flow-core ol li { display: flex; gap: 12px; padding: 0 0 16px; color: #e6e9ff; line-height: 1.4; }
+.flow-core ol b { flex: none; width: 26px; height: 26px; display: grid; place-items: center; background: #a78bfa; color: #0b0a1f; font: 800 .85rem/1 var(--font); }
+.flow-out .snap { margin: 0 0 14px; border: 1px solid rgba(247, 147, 30, .6); background: #0a0710; box-shadow: 0 0 50px rgba(247, 147, 30, .18); }
+.flow-out .snap img { display: block; width: 100%; height: auto; }
+.flow-out .snap figcaption { padding: 8px 12px; font-size: .85rem; color: #ffd9ae; background: rgba(247, 147, 30, .14); border-top: 1px solid rgba(247, 147, 30, .4); }
+.flow-out .teams { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.flow-out .teams li { padding: 8px 14px; font-weight: 700; font-size: .92rem; color: #0b1020; }
+.flow-out .t1 { background: #f7931e; } .flow-out .t2 { background: #36d399; } .flow-out .t3 { background: #4fd1ff; }
+.flow-out .appr { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--body); font-size: .95rem; }
+.flow-out .appr svg { width: 20px; height: 20px; color: var(--orange); flex: none; }
+.h-galaxy { position: relative; overflow: hidden; min-height: 460px; display: flex; align-items: center; border-top: 1px solid var(--border); background: radial-gradient(900px 480px at 70% 50%, rgba(30, 40, 120, .55), transparent 70%), #04061a; }
+.h-galaxy canvas.galaxy { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.h-galaxy .wrap { position: relative; padding-top: 28px; padding-bottom: 28px; }
+.h-galaxy .h-text { max-width: 30rem; }
+.h-galaxy h2 { font-size: clamp(1.8rem, 1.2rem + 2vw, 2.7rem); margin: 8px 0 12px; }
+@media (max-width: 900px) {
+  .flow { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .flow-fx { display: none; }
+  .h-galaxy { min-height: 600px; align-items: flex-start; }
+  .h-galaxy .wrap { padding-top: 40px; }
+}
+.flow-out .snap img { -webkit-mask-image: linear-gradient(90deg, #000 72%, transparent); mask-image: linear-gradient(90deg, #000 72%, transparent); }

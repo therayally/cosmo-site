@@ -64,6 +64,40 @@
 
 <div id="features"></div>
 
+<section class="h-flow" id="flow" aria-labelledby="flow-h">
+  <div class="wrap">
+    <div class="h-head"><span class="eyebrow">How it flows</span><h2 id="flow-h">From raw data to a decision a person can approve.</h2></div>
+    <div class="flow" data-flow>
+      <canvas class="flow-fx" aria-hidden="true"></canvas>
+      <div class="flow-col flow-in">
+        <h3>What goes in</h3>
+        <ul>
+          <li class="n1"><svg aria-hidden="true"><use href="#i-server"/></svg>Firewall and network logs</li>
+          <li class="n2"><svg aria-hidden="true"><use href="#i-globe"/></svg>Threat feeds</li>
+          <li class="n3"><svg aria-hidden="true"><use href="#i-file"/></svg>Reports and documents</li>
+          <li class="n4"><svg aria-hidden="true"><use href="#i-mail"/></svg>Mail</li>
+          <li class="n5"><svg aria-hidden="true"><use href="#i-flask"/></svg>Files and scripts</li>
+        </ul>
+      </div>
+      <div class="flow-col flow-core">
+        <h3>C.O.S.M.O</h3>
+        <ol>
+          <li><b>1</b><span>Matches everything against your threat intelligence</span></li>
+          <li><b>2</b><span>Triages every incident and scores it, with reasons</span></li>
+          <li><b>3</b><span>Takes malware apart with five AI analysts</span></li>
+          <li><b>4</b><span>Writes each team&rsquo;s work pack and playbook</span></li>
+        </ol>
+      </div>
+      <div class="flow-col flow-out">
+        <h3>What your people get</h3>
+        <figure class="snap"><img src="assets/img/report-snapshot.jpg" width="807" height="269" loading="lazy" alt="A C.O.S.M.O report: a danger score of 100 on the dial, rated Dangerous, with a plain-English explanation of what the file does"><figcaption>A report with its risk score and a plain-English explanation</figcaption></figure>
+        <ul class="teams"><li class="t1">Firewall team</li><li class="t2">Detection team</li><li class="t3">SOC analysts</li></ul>
+        <p class="appr"><svg aria-hidden="true"><use href="#i-person"/></svg>A person approves before anything changes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="h-row" aria-labelledby="f1">
   <div class="wrap h-grid">
     <div class="h-text">
@@ -173,6 +207,17 @@
         </g>
         <text x="330" y="292" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="11.5" fill="#ff9da0">suspect file · only read, never run</text>
       </svg>
+    </div>
+  </div>
+</section>
+
+<section class="h-galaxy" id="galaxy" aria-labelledby="gx-h">
+  <canvas class="galaxy" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="h-text">
+      <span class="eyebrow">The threat library</span>
+      <h2 id="gx-h">A whole galaxy of threat intelligence.</h2>
+      <p>Attacker groups, malware, campaigns, tools and weaknesses are linked together and searchable. Every report you add joins the map, and C.O.S.M.O follows the links for you.</p>
     </div>
   </div>
 </section>
@@ -299,5 +344,6 @@
   </div>
 </footer>
 <script src="js/site.js" defer></script>
+<script src="js/fx.js" defer></script>
 </body>
 </html>
